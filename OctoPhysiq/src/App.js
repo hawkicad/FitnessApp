@@ -8,6 +8,7 @@ import PlannerPage from './pages/PlannerPage';
 import SearchPage from './pages/SearchPage';
 import StrengthPage from './pages/StrengthPage';
 import WeightPage from './pages/WeightPage';
+import RunPage from './pages/RunPage';
 
 import {
   HomeOutlined,
@@ -18,7 +19,8 @@ import {
   SearchOutlined,
   UserOutlined,
   MenuFoldOutlined,
-  MenuUnfoldOutlined
+  MenuUnfoldOutlined,
+  ThunderboltOutlined
 } from '@ant-design/icons';
 
 const { Header, Footer, Sider, Content } = Layout;
@@ -87,6 +89,12 @@ function App() {
                   <Link className='MenuLink' to="/search">Exercise Search</Link>
                 </span>
               </Menu.Item>
+              <Menu.Item key ='run'>
+                <ThunderboltOutlined />
+                <span>
+                  <Link className='MenuLink' to="/run">Run Planner</Link>
+                </span>
+              </Menu.Item>
               <Menu.SubMenu
                 className='customSubmenu'
                 key = 'sidebarSubmenu'
@@ -114,6 +122,7 @@ function App() {
                 <Route exact path="/" element={<HomePage/>}/>
                 <Route exact path="/planner" element={<PlannerPage/>}/>
                 <Route exact path="/search" element={<SearchPage/>}/>
+                <Route exact path="/run" element={<RunPage/>}/>
                 <Route exact path="/strength" element={<StrengthPage/>}/>
                 <Route exact path="/weight" element={<WeightPage/>}/>
               </Routes>
@@ -131,6 +140,7 @@ function App() {
                     <Link to="/"><span style={{textDecoration: 'underline'}}>Home</span></Link>
                     <Link to="/planner"><span style={{textDecoration: 'underline'}}>Routine Planner</span></Link>
                     <Link to="/search"><span style={{textDecoration: 'underline'}}>Exercise Search</span></Link>
+                    <Link to="/run"><span style={{textDecoration: 'underline'}}>Run Planner</span></Link>
                     <Link to="/strength"><span style={{textDecoration: 'underline'}}>Strength Tracking</span></Link>
                     <Link to="/weight"><span style={{textDecoration: 'underline'}}>Weight/Calorie Tracking</span></Link>
                   </Space>

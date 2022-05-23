@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Menu, Typography, Avatar, Layout } from 'antd';
 import { Link } from 'react-router-dom';
-import { HomeOutlined, TableOutlined, SearchOutlined, CalendarOutlined, FireOutlined, CalculatorOutlined, MenuOutlined } from '@ant-design/icons';
+import { HomeOutlined, TableOutlined, SearchOutlined, CalendarOutlined, FireOutlined, CalculatorOutlined, MenuOutlined, ThunderboltOutlined } from '@ant-design/icons';
 
 const { Header, Footer, Sider, Content } = Layout;
 import Title from 'antd/lib/typography/Title';
@@ -53,6 +53,10 @@ const Sidebar = () => {
             <Menu.Item key ='search'>
               <SearchOutlined/>
               <Link className='MenuLink' to="/search">Exercise Search</Link>
+            </Menu.Item>
+            <Menu.Item key ='search'>
+            <ThunderboltOutlined />
+              <Link className='MenuLink' to="/run">Run Planner</Link>
             </Menu.Item>
             <Menu.SubMenu
               className='customSubmenu'

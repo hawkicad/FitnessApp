@@ -42,6 +42,7 @@ const HomePage = () => {
                         <Title level={4}>• Navigation to each page</Title>
                         <Title level={4}>• Exercise Search offers user the ability to find exercises based on targeted muscle</Title>
                         <Title level={4}>• Display is semi-formatted to work for most device sizes</Title>
+                        <Title level={4}>• Run Planner page uses another microservice to retrieve weather in given city to see if it is worth running</Title>
                     </Col>
                 </Row>
                 <Row>
