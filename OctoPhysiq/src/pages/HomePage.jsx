@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { Typography, Row, Col, Statistic, Carousel} from 'antd';
 import { Link } from 'react-router-dom';
 
-import { useGetTargetExercisesQuery } from '../services/exerciseAPI';
-//import 
+import { useGetQuoteQuery } from '../services/quoteAPI';
+import Loader from '../components/Loader';
 import { Content } from 'antd/lib/layout/layout';
 
 import img1 from '../img/img1.jpg';
@@ -25,8 +25,11 @@ const contentStyle = {
 const { Title } = Typography;
 
 const HomePage = () => {
-    const { data, isFetching } = useGetTargetExercisesQuery('biceps');
-    if (!isFetching) console.log(data);
+
+    const { data: quote, isFetching} = useGetQuoteQuery();
+    console.log(quote);
+
+    if (isFetching) return <Loader />;
 
   return (
     <Content style={{padding: '0 50px'}}>
@@ -35,6 +38,14 @@ const HomePage = () => {
                 <Col>
                     <Title level={1}>Welcome to OctoPhysiq</Title>
                     <Title level={4}>Your fitness goals are achievable and we are here to help</Title>
+                    {isFetching 
+                    ?   <>
+                            <p>hi</p>
+                        </>
+                    :   <>
+                            <Title level={3}>"{quote.quote}"</Title>
+                            <Title level={5}>- {quote.author}</Title>
+                        </>}
                 </Col>
                 <Row>
                     <Col style={{background: 'd9d9d9', marginTop: 50}}>
